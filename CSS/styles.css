@@ -1,0 +1,789 @@
+@font-face {
+	font-family: textFont;
+	src: url(Montserrat-Regular.ttf);
+}
+
+@font-face{
+	font-family: headFont;
+	src: url(Raleway-Regular.ttf);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+
+/*Source: https://fabriceleven.com/design/creating-fancy-css3-fade-in-animations-on-page-load/*/
+/* make keyframes that tell the start state and the end state of our object */
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+body{
+	margin:0;
+	padding:0;
+}
+.fade-in {
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeIn ease-in 1;
+	animation:fadeIn ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s;
+	animation-duration:1s;
+}
+
+.fade-in.two {
+-webkit-animation-delay: 0.7s;
+-moz-animation-delay: 0.7s;
+animation-delay: 0.7s;
+}
+
+.fade-in.one {
+-webkit-animation-delay: 1.2s;
+-moz-animation-delay:1.2s;
+animation-delay: 1.2s;
+}
+
+/*---make a basic box ---*/
+.box{
+width: auto;
+height: auto;
+position: relative;
+
+}
+
+
+
+/*Background opacity by http://stackoverflow.com/a/10849233 (Users Dan Eastwell and Lawrence Dol*/
+html, body{
+	margin:0;
+  padding:0;
+}
+
+html:after {
+	content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:#bab9ca;
+    width: 100%;
+    height: 100%;
+    opacity : 0.2;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+
+}
+
+
+.center {
+		
+		text-align: center;
+}
+
+#slideshow{
+	margin: auto;
+    width: 50%;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+#navigation {
+	font-family: textFont;
+}
+
+h1{
+	font-size: 26px;
+}
+
+.nav_box{
+	height: auto;
+	list-style-type: none;
+	overflow: hidden;
+	text-align: left;
+	padding-left:0;
+}
+
+.nav_items{
+	width: 100px;
+	display: inline;
+}
+
+.nav_items{
+	font-size: 20px;
+	display: inline-block;
+	font-family: 'Open Sans', sans-serif;
+    width: 100px;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-right: 2px solid #bbb;
+  	/*Fading navigation thanks to http://stackoverflow.com/a/6008409 (User Marcel)*/
+}
+
+.nav_items:last-child{
+	border-right:none;
+}
+
+.nav_items a:visited {
+	text-decoration: none;
+	color:#fff;
+}
+
+.nav_items a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.text {
+	font-family: 'Roboto Condensed', sans-serif;
+	line-height:1.5;
+	font-weight: 500;
+	font-size:18px;
+	display: block;
+	margin-left:0;
+	margin-right: auto;
+	max-width: 1000px
+}
+
+.container {
+	overflow: hidden;
+    border-radius: 0;
+    margin: 0;
+    padding-left:0;
+    padding-right:0;
+    padding-top: 1em;
+    width: 100%;
+    background-color: #f1f1f5;
+}
+
+.button {
+  display: block;
+  border-radius: 20px;
+  background-color: #000000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: textFont;
+  font-size: 18px;
+  padding: 7px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: -29px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.Lbutton {
+	margin-left: 30px;
+}
+
+#eboard {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #B31B1B;
+    color: white;
+    border-radius: 5px;
+    padding: 15px;
+    width: 175px;
+    line-height: 1.5;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+#eboard img{
+    height: 164px;
+    margin: auto;
+}
+
+#contactform input{
+  padding:5px;
+}
+
+#contactform textarea{
+  width:90%;
+  height:100px;
+}
+
+.pHeader {
+font-family: headFont;
+    border-radius: 5px;
+    color: black;
+    display: block;
+    font-size: 35px;
+    padding-bottom: 5px;
+    border-bottom: 5px double rgb(144, 156, 189);
+}
+
+.announcement{
+	background-color: #B31B1B;
+	color: white;
+	font-family: headFont;
+	padding:10px;
+	margin: 30px;
+	border-radius:10px;
+
+}
+
+#calendar{
+	font-family: headFont;
+	border-radius: 5px;
+	background-color: #B31B1B;
+	color: white;
+	padding: 40px;
+	display: inline-block;
+
+}
+
+#logo {
+	float:left;
+
+}
+
+.clear{
+	clear:both;
+}
+
+.verticalalign{
+    min-height:300px;
+    position: relative;
+    background: #B31B1B;
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 0;
+}
+
+.verticalalign .icon{
+	position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.verticalalign #fb{
+	position: absolute;
+    right: 0;
+    top: 13px;
+}
+
+header {
+	display:none;
+}
+
+#mobile_nav{
+    display: block;
+    background: black;
+    height: auto;
+    position: relative;
+}
+
+#mobile_nav li{
+	display:none;
+}
+
+#mobile_nav ul.responsive li{
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding-top: 21px;
+    padding-bottom: 5px;
+}
+
+#mobile_nav #button{
+    color: white;
+    width: 100px;
+    top: 6px;
+    position: relative;
+}
+
+.bannerImage{
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+#banner{
+	display:block;
+	margin:auto;
+	padding-top:10px;
+	padding-bottom:10px;
+	width:160px;
+}
+
+.vert-nav_box{
+	border-radius: 5px;
+	display:inline-block;
+	float:left;
+	list-style-type: none;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-color: gray;
+	width: 120px;
+	padding-bottom: 1px;
+	position: relative;
+}
+
+.vert-nav_items{
+	display: block;
+}
+
+.vert-nav_items{
+	font-size: 20px;
+	display: inline-block;
+	font-family: textFont;
+    width: 120px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -o-transition:.5s;
+  	-ms-transition:.5s;
+  	-moz-transition:.5s;
+  	-webkit-transition:.5s;
+  	transition:.5s;
+}
+
+.vert-nav_items a:visited {
+	text-decoration: none;
+	color:white;
+}
+
+.vert-nav_items a {
+	text-decoration: none;
+}
+
+#slider {
+    opacity:1;
+    transition: opacity 1s;
+}
+
+#slider.fadeOut {
+    opacity:0;
+}
+
+.blogPost {
+	font-family: headFont;
+	border-radius: 5px;
+	background-image: url(../images/gray.jpg);
+	color: black;
+	padding: 10px;
+	display: inline-block;
+	font-size: 19px;
+
+}
+
+.blogLine {
+	padding-bottom: 23px;
+	border-bottom: 2px solid #800000;
+}
+
+.icon {
+	display: inline-block;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 50px;
+}
+
+#grid {
+	max-width: 600px;
+	margin: auto;
+}
+
+.galleria{
+	height:600px;
+	width:100%;
+	background:#fff;
+}
+
+.content{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+footer img{
+  width:150px;
+}
+
+footer{
+  height: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #3b3b3c;
+  margin-top:20px;
+}
+
+.footerleft{
+  width:40%;
+  float:left;
+}
+
+.footerright{
+  width:40%;
+  float:right;
+}
+
+
+@media(min-device-width: 450px) {
+
+#mobile_nav {
+  display: none!important;
+}
+.center {
+		
+		text-align: center;
+}
+
+#slideshow{
+	margin: auto;
+    width: 50%;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+#navigation {
+	font-family: textFont;
+}
+
+h1{
+	font-size: 26px;
+}
+
+.nav_box{
+	height: auto;
+	list-style-type: none;
+	overflow: hidden;
+	text-align: left;
+	padding-left:0;
+}
+
+.nav_items{
+	width: 100px;
+	display: inline;
+}
+
+.nav_items{
+	font-size: 20px;
+	display: inline-block;
+	font-family: 'Open Sans', sans-serif;
+    width: 100px;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-right: 2px solid #bbb;
+  	/*Fading navigation thanks to http://stackoverflow.com/a/6008409 (User Marcel)*/
+}
+
+.nav_items:last-child{
+	border-right:none;
+}
+
+.nav_items a:visited {
+	text-decoration: none;
+	color:#fff;
+}
+
+.nav_items a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.text {
+	font-family: 'Roboto Condensed', sans-serif;
+	line-height:1.5;
+	font-weight: 500;
+	font-size:18px;
+	display: block;
+	margin-left:0;
+	margin-right: auto;
+	max-width: 1000px
+}
+
+.container {
+    overflow: hidden;
+    border-radius: 0;
+    margin: 0;
+    padding-top: 1em;
+    min-width: 1000px;
+    max-width: 100%;
+    background-color: #f1f1f5;
+}
+
+.button {
+  display: block;
+  border-radius: 20px;
+  background-color: #000000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: textFont;
+  font-size: 18px;
+  padding: 7px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: -29px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.Lbutton {
+	margin-left: 30px;
+}
+
+#eboard {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #B31B1B;
+    color: white;
+    border-radius: 5px;
+    padding: 15px;
+    width: 175px;
+    line-height: 1.5;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+.pHeader {
+font-family: headFont;
+    border-radius: 5px;
+    color: black;
+    display: block;
+    font-size: 35px;
+    padding-bottom: 5px;
+    border-bottom: 5px double rgb(144, 156, 189);
+}
+
+.announcement{
+	background-color: #B31B1B;
+	color: white;
+	font-family: headFont;
+	padding:10px;
+	margin: 30px;
+	border-radius:10px;
+
+}
+
+#calendar{
+	font-family: headFont;
+	border-radius: 5px;
+	background-color: #B31B1B;
+	color: white;
+	padding: 40px;
+	display: inline-block;
+
+}
+
+#logo {
+	float:left;
+
+}
+
+.clear{
+	clear:both;
+}
+
+.verticalalign{
+    background: #B31B1B;
+    min-width: 1000px;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #2f2424;
+    min-height:92px;
+    padding-top:30px;
+}
+
+.verticalalign .icon{
+	position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.verticalalign #fb{
+	right:90px;
+  top:0px;
+}
+
+header#mobile_nav {
+	display:none!important;
+}
+
+header {
+	display:inline-block;
+	width:78%;
+	top:35%;
+	position:absolute;
+}
+
+.bannerImage{
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+#banner{
+	display:inline-block;
+	width:150px;
+}
+
+.vert-nav_box{
+	border-radius: 5px;
+	display:inline-block;
+	float:left;
+	list-style-type: none;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-color: gray;
+	width: 120px;
+	padding-bottom: 1px;
+	position: relative;
+}
+
+.vert-nav_items{
+	display: block;
+}
+
+.vert-nav_items{
+	font-size: 20px;
+	display: inline-block;
+	font-family: textFont;
+    width: 120px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -o-transition:.5s;
+  	-ms-transition:.5s;
+  	-moz-transition:.5s;
+  	-webkit-transition:.5s;
+  	transition:.5s;
+}
+
+.vert-nav_items a:visited {
+	text-decoration: none;
+	color:white;
+}
+
+.vert-nav_items a {
+	text-decoration: none;
+}
+
+#slider {
+    opacity:1;
+    transition: opacity 1s;
+}
+
+#slider.fadeOut {
+    opacity:0;
+}
+
+.blogPost {
+	font-family: headFont;
+	border-radius: 5px;
+	background-image: url(../images/gray.jpg);
+	color: black;
+	padding: 10px;
+	display: inline-block;
+	font-size: 19px;
+
+}
+
+.blogLine {
+	padding-bottom: 23px;
+	border-bottom: 2px solid #800000;
+}
+
+.icon {
+	display: inline-block;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 50px;
+}
+
+#grid {
+	max-width: 600px;
+	margin: auto;
+}
+
+.galleria{
+	height:600px;
+	width:100%;
+	background:#fff;
+}
+
+.content{
+  margin:auto;
+  max-width:1000px;
+  padding-left:40px;
+  padding-right:40px;
+  position:relative;
+}
+
+#contactform textarea{
+  width:400px;
+}
+}
