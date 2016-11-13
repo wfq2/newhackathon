@@ -1,0 +1,110 @@
+.header img {
+  width: 180px;
+  padding-left: 40px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.textbox {
+	text-align: center;
+	background-color: white;
+	font-size: 20pt;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	padding-bottom: 30px;
+}
+
+.textbox h2{
+	font-size: 18pt;
+	color: gray;
+	display: inline;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+a{
+	color:white !important;
+	text-decoration: none;
+}
+
+.textbox lnk{
+	font-size: 14pt;
+	color: #00bfff;
+	white-space: pre;
+	padding-right: 20px;
+}
+
+.textbox img {
+	height: 196px;
+}
+
+.blueTxt{
+	color: #00608D;
+	display:inline;
+}
+
+.redTxt{
+	color: red;
+	display: inline;
+	font-size: 11pt;
+	padding-left: 10px;
+}
+
+.displayLoans{
+	display: inline;
+}
+
+.displayLoans h1{
+	font-size: 14pt;
+	background-color: white;
+	padding-left: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 0px;
+}
+
+.loanDetails{
+	text-align: right;
+	display: inline;
+	padding-right: 20px;
+}
+
+.loanDetailsAmount{
+	color = #00608D;
+}
+
+.interest{
+	color: gray;
+}
+
+
+.nav_bar {
+  	font-family: 'Open Sans';
+  	font-size: 10pt;
+  	font-weight: 300;
+  	color: white;
+  	text-align: center;
+  	background-color: #00608D;
+    margin: 0px;
+}
+
+.navbar ul {
+    height: auto;
+    padding: 20px 20px;
+    margin: 0px;
+    margin-top: 1%;
+    list-style-type: none;
+    padding-left: 40px;
+    background-color: #00608D;
+}
+
+.navbar li {
+	display: inline;
+	padding: 25px;
+  	color: white;
+}
+
+.container {
+	background-color: #F3F3F4;
+	margin: 0px;
+}

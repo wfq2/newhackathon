@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<title>Trim</title>
+</head>
+
+<body>
+	<!--Header-->
+	<div class="header">
+  		<img src="assets/c1logo.png">
+  		<!-- <p>+</p>
+  		<img src="assets/trim.png"> -->
+	</div>
+
+	<!--Nav Bar-->
+	<div class="navbar">
+  		<ul class="noselect">
+			<li>Accounts</li>
+			<li>Bill Pay</li>
+			<li>Transfer</li>
+			<li><a href="accrued.html">Trim</a></li>
+  		</ul>
+	</div>
+
+	<div class = "container">
+		<p>Bill Cycle: Oct 23 - Nov 25</p>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="textbox">
+<img src= "assets/piggybank.png">
+				<h1>Congrats!</h1><h2>You've added an additional<p class ="blueTxt" id="monthlytotal"> $36 </p>towards your loans this month.</h2>
+				<lnk>
+
+See how</lnk>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="textbox">
+<img src= "assets/moneybag.png">
+				<h1>Your Plan</h1><h2>You are paying<p class ="blueTxt"> $350/month.</p> Estimated to pay all loans in <p class ="blueTxt">5 years.</p></h2>
+				<lnk>
+
+Edit Plan</lnk>
+				</div>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="displayLoans">
+  				<h1>Total loans left: <p class ="blueTxt">$17,871</p></h1>
+  			</div>
+		</div>
+		<div class="row">
+  			<div class="displayLoans">
+  				<h1>Federal loan 1 <p class ="redTxt">Remove</p>
+  				<div class="loanDetails">
+  					<p class="loadDetailsAmount">$3,200</p>	
+  					<p class="interest">Interest: 3% - ($23 a year)</p>
+  				</div>
+  				</h1>
+  			</div>
+		</div>
+		<div class="row">
+  			<div class="displayLoans">
+  				<h1>Federal loan 2 <p class ="redTxt">Remove</p></h1>
+  			</div>
+		</div>
+	</div>
+	<script src="data.js"></script>
+</body>
+</html>
