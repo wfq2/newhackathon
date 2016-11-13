@@ -1,8 +1,16 @@
-.header img {
-  width: 180px;
+.capitalOneLogo {
+  width: 190px;
   padding-left: 40px;
   padding-top: 30px;
   padding-bottom: 20px;
+}
+
+.trimlogo{
+	width: 190px;
+	float: right;
+	padding-right: 40px;
+	padding-top: 10px;
+ 	padding-bottom: 20px;
 }
 
 p span{
@@ -109,14 +117,32 @@ a{
 	padding-right: 20px;
 }
 
-.loanDetailsAmount{
-	color = #00608D;
+.loanDetails lnk{
+	float: right;
+	font-size: 12pt;
+	color: #00bfff;
+	padding-right: 20px;
+}
+
+.loanDetails amount{
+	color: #00608D;
+	font-size: 16pt;
+	float: right;
+	padding-right: 20px;
 }
 
 .interest{
 	color: gray;
 }
 
+.addingLoan{
+	color: #00bfff;
+	font-size: 20pt;
+	text-align: center;
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
 
 .nav_bar {
   	font-family: 'Open Sans';
