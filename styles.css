@@ -5,6 +5,19 @@
   padding-bottom: 20px;
 }
 
+p span{
+	float:right;
+}
+
+p {
+	padding:10px;
+}
+
+#payments{
+	font-family: inherit;
+	font-size:14px;
+}
+
 .textbox {
 	text-align: center;
 	background-color: white;
@@ -12,6 +25,33 @@
 	margin-top: 30px;
 	margin-bottom: 20px;
 	padding-bottom: 30px;
+}
+
+p.bar{
+	margin-bottom: 1px;
+}
+
+.displayLoans span{
+	color:blue;
+}
+
+#accrued .row{
+	margin-top:2px;
+}
+
+#accrued h1{
+	margin-top: 1px;
+}
+
+#accrued .displayLoans{
+	background:white;
+	width:100%;
+}
+
+.bar{
+	background:white;
+	padding:5px;
+	padding-left:60px;
 }
 
 .textbox h2{

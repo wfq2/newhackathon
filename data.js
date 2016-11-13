@@ -21,10 +21,10 @@ $( document ).ready(function() {
        // console.log(totalthismonth(sorted));
         //console.log("total = " +total);
         gettotalsaved(sorted);
-        console.log(payments);
+        console.log(getmonthavg(sorted));
         $("#totalaccrued").html(" $"+allsavings(sorted)+" ");
         for (var i=0;i<payments.length;i++){
-        	$("#payments").append("<p> Date: " + payments[i][0] + " Amount: " + payments[i][1]);
+        	$("#payments").append("<p class='bar'> Date: " + payments[i][0] + "<span> Amount: $<span>" + payments[i][1]);
         }
         makedeposit(0.05);
     }
@@ -42,6 +42,27 @@ function gettotalsaved(transactions){
 		total += transactions[i][1];
 	}
 	return total;
+}
+
+function getmonthavg(transactions){
+	var total = 0;
+	var months = 1;
+	var latestmonth = getmonth(transactions[0][0]);
+	for (var i=0;i<transactions.length;i++){
+		total += transactions[i][1];
+		if (latestmonth == getmonth(transactions[i][0])){
+			console.log(getmonth(transactions[i][0]));
+		}
+		else{
+			months += 1;
+		}
+		latestmonth = getmonth(transactions[i][0]);
+	}
+	console.log(months);
+	total = total/months
+	total = Math.round(total * 100) / 100
+	$("#monthavg").html(" $" + total)
+	return total
 }
 
 function allsavings(transactions){
