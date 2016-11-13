@@ -12,8 +12,9 @@ $( document ).ready(function() {
     	var js_array = results;
     	var transactionarray = [];
     	for (var i =0;i<js_array.length;i++){
+    		if (typeof js_array[i].purchase_date != 'undefined'){
     		transactionarray.push([js_array[i].purchase_date,js_array[i].amount]);
-    	}
+    	}}
         //do something 
 		//console.log(getmonth(transactionarray[0][0]))
         var sorted = sorttransactions(getskimmedarray(transactionarray));
@@ -22,12 +23,14 @@ $( document ).ready(function() {
         //console.log("total = " +total);
         gettotalsaved(sorted);
         console.log(getmonthavg(sorted));
-        $("#totalaccrued").html(" $"+allsavings(sorted)+" ");
-        $("#monthlytotal").html(" $"+allsavings(sorted)+" ");
+        var money = allsavings(sorted);
+        money = Math.round(money * 100) / 100
+        $("#totalaccrued").html(" $"+money+" ");
+        $("#monthlytotal").html(" $"+money+" ");
         for (var i=0;i<payments.length;i++){
         	$("#payments").append("<p class='bar'> Date: " + payments[i][0] + "<span> Amount: $<span>" + payments[i][1]);
         }
-        makedeposit(0.05);
+        //makedeposit(0.05);
     }
 });
 });
@@ -189,14 +192,16 @@ $.ajax({
 }
 
 function makepurchase(amount){
-	var obj = {
+	amount = parseFloat(amount);
+	var obj = JSON.stringify({
     "merchant_id": "57cf75cea73e494d8675ec49",
     "amount": amount,
     "medium": "balance",
+    "purchase_date": "2016-11-13",
     "description": "string"
-}
+});
 	$.ajax({
-    url : "http://api.reimaginebanking.com/accounts/582853cb360f81f10454c1b7/purchases?key=928cd0c9627ba32b3be6893c4c6c1d61",
+    url : "http://api.reimaginebanking.com/accounts/5827bd04360f81f10454a22f/purchases?key=928cd0c9627ba32b3be6893c4c6c1d61",
     type: "POST",
     data : obj,
     contentType: "application/json",
@@ -217,4 +222,5 @@ function makepurchase(amount){
 
 $( "#submitamount" ).click(function() {
  	var num = $("#getamount").val();
+ 	makepurchase(num);
 });
