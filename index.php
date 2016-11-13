@@ -5,7 +5,7 @@ session_start();
 <html>
 
     <head>
-	<title>Cornell Alpine Skiing</title>
+	<title>TRIM</title>
 
 	<link rel="shortcut icon" type="image/x-icon" href="myicon.ico">
 	<meta name="google-site-verification" content="jLqIv-bYHodHnaXXeR_94O8GVGkyZ6ijJxWitVI65Zw" />
