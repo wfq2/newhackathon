@@ -6,6 +6,9 @@ session_start();
 
     <head>
 	<title>TRIM</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="data.js"</script>
+	<title>Cornell Alpine Skiing</title>
 
 	<link rel="shortcut icon" type="image/x-icon" href="myicon.ico">
 	<meta name="google-site-verification" content="jLqIv-bYHodHnaXXeR_94O8GVGkyZ6ijJxWitVI65Zw" />
