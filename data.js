@@ -215,6 +215,6 @@ function makepurchase(amount){
 }
 
 
-$( "#paymentmade" ).click(function() {
-  
+$( "#submitamount" ).click(function() {
+ 	var num = $("#getamount").val();
 });
