@@ -26,6 +26,11 @@ p {
 	font-size:14px;
 }
 
+.paddingOnBottom{
+	padding: 50px;
+	background-color: white;
+}
+
 .textbox {
 	text-align: center;
 	background-color: white;
