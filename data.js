@@ -165,7 +165,7 @@ function getskimmedarray(transactions){
 function makedeposit(amount){
 	var obj = JSON.stringify({
   "medium": "balance",
-  "amount": 0.01,
+  "amount": amount,
   "description": "string"
 });
 	console.log(obj);
@@ -189,6 +189,12 @@ $.ajax({
 }
 
 function makepurchase(amount){
+	var obj = {
+    "merchant_id": "57cf75cea73e494d8675ec49",
+    "amount": amount,
+    "medium": "balance",
+    "description": "string"
+}
 	$.ajax({
     url : "http://api.reimaginebanking.com/accounts/582853cb360f81f10454c1b7/purchases?key=928cd0c9627ba32b3be6893c4c6c1d61",
     type: "POST",
