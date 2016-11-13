@@ -23,6 +23,7 @@ $( document ).ready(function() {
         gettotalsaved(sorted);
         console.log(getmonthavg(sorted));
         $("#totalaccrued").html(" $"+allsavings(sorted)+" ");
+        $("#monthlytotal").html(" $"+allsavings(sorted)+" ");
         for (var i=0;i<payments.length;i++){
         	$("#payments").append("<p class='bar'> Date: " + payments[i][0] + "<span> Amount: $<span>" + payments[i][1]);
         }
@@ -51,7 +52,6 @@ function getmonthavg(transactions){
 	for (var i=0;i<transactions.length;i++){
 		total += transactions[i][1];
 		if (latestmonth == getmonth(transactions[i][0])){
-			console.log(getmonth(transactions[i][0]));
 		}
 		else{
 			months += 1;
@@ -101,7 +101,7 @@ function totalthismonth(transactions){
 		acc += transactions[i][1];
 	}
 	acc = Math.round(acc * 100) / 100;
-	$("#monthlytotal").html(" $"+ acc + " ");
+	//$("#monthlytotal").html(" $"+ acc + " ");
 	return acc;
 }
 
@@ -161,16 +161,46 @@ function getskimmedarray(transactions){
 	}
 	return newarray;
 }
+
 function makedeposit(amount){
-	var obj = {};
-	obj.medium = "balance";
-	obj.amount = amount;
-	obj.description = "string";
+	var obj = JSON.stringify({
+  "medium": "balance",
+  "amount": amount,
+  "description": "string"
+});
 	console.log(obj);
 $.ajax({
     url : "http://api.reimaginebanking.com/accounts/582853cb360f81f10454c1b7/deposits?key=928cd0c9627ba32b3be6893c4c6c1d61",
     type: "POST",
     data : obj,
+    contentType: "application/json",
+    dataType: "json",
+    success: function(data)
+    {
+        console.log(data);
+        console.log("success");
+    },
+    error: function (data)
+    {
+ 		console.log(data);
+ 		console.log("failure");
+    }
+});
+}
+
+function makepurchase(amount){
+	var obj = {
+    "merchant_id": "57cf75cea73e494d8675ec49",
+    "amount": amount,
+    "medium": "balance",
+    "description": "string"
+}
+	$.ajax({
+    url : "http://api.reimaginebanking.com/accounts/582853cb360f81f10454c1b7/purchases?key=928cd0c9627ba32b3be6893c4c6c1d61",
+    type: "POST",
+    data : obj,
+    contentType: "application/json",
+    dataType: "json",
     success: function(data)
     {
         console.log(data);
