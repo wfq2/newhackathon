@@ -23,11 +23,6 @@ $( document ).ready(function() {
         $("#monthlytotal").html(" $"+money+" ");
         var monthavg = getmonthavg(sorted);
         $("#monthavg").html(" $"+monthavg+" ");
-        for (var i=0;i<payments.length;i++){
-        	$("#payments").prepend("<p class='bar'> Date: " + payments[i][0] + "<span> Amount: $<span>" + payments[i][1]);
-        }
-        //makedeposit(0.05);
-        makelinegraph(sorted);
 }
 });
 });
