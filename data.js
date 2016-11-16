@@ -1,7 +1,7 @@
 
 var payments = [];
 var minimum = 10;
-var skimmedarray = [];
+var skimmedarray;
 var totalweek = [];
 //[date,amount]
 $( document ).ready(function() {
@@ -22,18 +22,44 @@ $( document ).ready(function() {
        // console.log(totalthismonth(sorted));
         //console.log("total = " +total);
         gettotalsaved(sorted);
-        console.log(getmonthavg(sorted));
+        //console.log(getmonthavg(sorted));
+        skimmedarray = sorted;
         var money = allsavings(sorted);
-        money = Math.round(money * 100) / 100
+        money = Math.round(money * 100) / 100;
         $("#totalaccrued").html(" $"+money+" ");
         $("#monthlytotal").html(" $"+money+" ");
+        var monthavg = getmonthavg(skimmedarray);
+        $("#monthavg").html(" $"+monthavg+" ");
         for (var i=0;i<payments.length;i++){
-        	$("#payments").append("<p class='bar'> Date: " + payments[i][0] + "<span> Amount: $<span>" + payments[i][1]);
+        	$("#payments").prepend("<p class='bar'> Date: " + payments[i][0] + "<span> Amount: $<span>" + payments[i][1]);
         }
         //makedeposit(0.05);
+        makelinegraph();
+}
+});
+});
+
+function makelinegraph(){
+	    var chartdata = getdailytotals(skimmedarray);
+        var chart = new CanvasJS.Chart("chartContainer", {
+		title: {
+			text: "Accrued Loan Payments"
+		},
+		axisX: {
+			title: "Date",
+			interval: 10,
+		},
+		axisY:{
+			title: "Paid"
+		},
+		data: [{
+			type: "line",
+			dataPoints: chartdata
+			}]
+		});
+		//console.log(chartdata);
+		chart.render();
     }
-});
-});
 
 function gettotalsaved(transactions){
 	var total = 0;
@@ -224,3 +250,24 @@ $( "#submitamount" ).click(function() {
  	var num = $("#getamount").val();
  	makepurchase(num);
 });
+
+function getdailytotals(thearray){
+	var totalsarray = [];
+	var currentdate = thearray[0][0];
+	var days = 0;
+	var dailytotal = 0;
+	for (var i=0;i<thearray.length;i++){
+		if (currentdate == thearray[i][0]){
+			//console.log(currentdate + "  = " + thearray[i][0]);
+			dailytotal += thearray[i][1];
+		}
+		else{
+			totalsarray.push({x: days,y: dailytotal});
+			//console.log(currentdate);
+			dailytotal += thearray[i][1];
+			currentdate = thearray[i][0];
+			days++;
+		}
+	}
+	return totalsarray;
+}

@@ -51,7 +51,8 @@
 		</div>
 		<div class="row">
 			<div class="displayLoans">
-  				<h1>Total Accrued This Month: <p class ="blueTxt" id="totalaccrued">$17,871</p></h1>
+  				<h1>Total Accrued This Payment Period: <p class ="blueTxt" id="totalaccrued"></p></h1>
+  				<h1>Monthly Average <p class ="blueTxt" id="monthavg"></p></h1>
   			</div>
 		</div>
 		<div class="row">
@@ -75,11 +76,10 @@
   				</div>
   			</div>
 		</div>
-		<div class="row">
-  			<p class="paddingOnBottom">
-  			</p>
-		</div>
-	</div>
+	<div id="chartContainer" style="height: 400px; width: 100%;"></div>
+</div>
 	<script src="data.js"></script>
+	<script src="canvasjs/jquery.canvasjs.min.js"></script>
+	<script src="accrued.js"></script>
 </body>
 </html>
