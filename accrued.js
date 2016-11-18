@@ -7,12 +7,14 @@ $( document ).ready(function() {
     	var transactionarray = [];
     	for (var i =0;i<js_array.length;i++){
     		if (typeof js_array[i].purchase_date != 'undefined'){
-    		transactionarray.push([js_array[i].purchase_date,js_array[i].amount]);
+    		var date = new Date (getyear(js_array[i].purchase_date),getmonth(js_array[i].purchase_date),getday(js_array[i].purchase_date));
+    		transactionarray.push([date,js_array[i].amount]);
     	}}
         //do something 
 		//console.log(getmonth(transactionarray[0][0]))
-        var sorted = sorttransactions(getskimmedarray(transactionarray));
-        var total = totalweeks(sorted);
+        var sorted = getskimmedarray(transactionarray).sort(sortFunction);
+       	//console.log(sorted);
+        //var total = totalweeks(sorted);
        // console.log(totalthismonth(sorted));
         //console.log("total = " +total);
         gettotalsaved(sorted);
@@ -27,7 +29,8 @@ $( document ).ready(function() {
         	$("#payments").prepend("<p class='bar'> Date: " + payments[i][0] + "<span> Amount: $<span>" + payments[i][1]);
         }
         //makedeposit(0.05);
-        makelinegraph(sorted);
+        //makelinegraph(sorted);
+        makebarchart(sorted);
 }
 });
 });
